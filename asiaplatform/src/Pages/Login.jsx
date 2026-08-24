@@ -15,7 +15,7 @@ export function Login() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const response = await fetch("http://localhost:3000/api/login", {
+        const response = await fetch("http://localhost:3000/auth/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -37,6 +37,9 @@ export function Login() {
 
         navigate("/dashboard");
     };
+    const loginGoogle = () => {
+        window.location.href = "http://localhost:3000/auth/google";
+    }
 
     return (
         <div className="d-flex golden-background">
@@ -87,7 +90,7 @@ export function Login() {
                                         />
                                     </div>
                                     <div className="mb-3">
-                                        <button className="btn btn-login w-100" type="button"><FcGoogle size={20} className="me-2" />Continuar con Google</button>
+                                        <button className="btn btn-login w-100" type="button" onClick={loginGoogle}><FcGoogle size={20} className="me-2" />Continuar con Google</button>
                                     </div>
                                     <button type="submit" className="btn btn-ingresar w-100">Ingresar</button>
                                 </form>
