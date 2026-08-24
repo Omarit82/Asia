@@ -35,7 +35,7 @@ export function Login() {
 
         login(data.user, data.token);
 
-        navigate("/dashboard");
+        navigate("/");
     };
     const loginGoogle = () => {
         window.location.href = "http://localhost:3000/auth/google";
@@ -44,27 +44,22 @@ export function Login() {
     return (
         <div className="d-flex golden-background">
             <div className=" text-center logo d-flex flex-column justify-content-center align-items-center">
-                <img src="./public/images/Asia.png" alt="Logo Asia" />
+                <img src="/images/Asia.png" alt="Logo Asia" />
                 <h2>Plataforma Asia</h2>
             </div>
             <div className="container">
                 <div className="row justify-content-center align-items-center vh-100 me-5">
                     <div className="">
                         <div className="card shadow">
-
                             <div className="card-body ">
-
                                 <h2 className="text-center mb-4">
                                     Iniciar Sesión
                                 </h2>
-
                                 <form onSubmit={handleSubmit}>
-
                                     <div className="mb-3">
                                         <label className="form-label">
                                             Email
                                         </label>
-
                                         <input
                                             type="email"
                                             className="form-control"
@@ -74,7 +69,6 @@ export function Login() {
                                             required
                                         />
                                     </div>
-
                                     <div className="mb-3">
                                         <label className="form-label">
                                             Contraseña
